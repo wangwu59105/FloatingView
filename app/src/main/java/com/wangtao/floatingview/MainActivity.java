@@ -1,11 +1,15 @@
 package com.wangtao.floatingview;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.release.floatingview.FloatRootView;
+import com.release.floatingview.FloatView;
 import com.release.floatingview.FloatingManage;
+import com.release.floatingview.listener.FloatClickListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,7 +21,14 @@ public class MainActivity extends AppCompatActivity {
         final FloatingManage floatingManage = new FloatingManage(this);
         floatingManage.toast("点击领取资料").add();
 
-
+        floatingManage.getView().setFloatClickListener(new FloatClickListener() {
+            @Override
+            public void onClick(FloatRootView magnetView) {
+                FloatView floatView = (FloatView) magnetView;
+                floatView.check(false);
+                Toast.makeText(MainActivity.this,"点击",Toast.LENGTH_SHORT).show();
+            }
+        });
         Button btn = findViewById(R.id.btn);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override

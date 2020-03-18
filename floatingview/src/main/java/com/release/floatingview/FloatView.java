@@ -1,15 +1,18 @@
 package com.release.floatingview;
 
 import android.content.Context;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.NonNull;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+
 import android.view.MotionEvent;
+import android.widget.ImageView;
 
 import com.makeramen.roundedimageview.RoundedImageView;
 
 public class FloatView extends FloatRootView {
 
-    private RoundedImageView ivCover;
+    private ImageView ivCover;
 
     public FloatView(@NonNull Context context) {
         super(context, null);
@@ -17,9 +20,15 @@ public class FloatView extends FloatRootView {
         ivCover = findViewById(R.id.iv_cover);
     }
 
-    public void setIconImage(@DrawableRes int resId) {
-        ivCover.setImageResource(resId);
+    public void setImageDrawable(@DrawableRes int resId) {
+        ivCover.setImageDrawable(ContextCompat.getDrawable(getContext(), resId));
     }
+
+
+    public void check(boolean check){
+        ivCover.setEnabled(check);
+    }
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {

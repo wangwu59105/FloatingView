@@ -7,8 +7,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.annotation.DrawableRes;
-import android.support.v4.view.ViewCompat;
+import androidx.annotation.DrawableRes;
+import androidx.core.view.ViewCompat;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -82,8 +82,8 @@ public class FloatingManage implements IFloatingView, FloatMoveListener {
     @Override
     public FloatingManage add() {
         showFloat(mContext);
-        if (mEnFloatingView != null) {
-            mEnFloatingView.setIconImage(resId);
+        if (mEnFloatingView != null && resId!=0) {
+            mEnFloatingView.setImageDrawable(resId);
         }
         if (!TextUtils.isEmpty(toastStr)) {
             initToastView();
