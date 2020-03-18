@@ -103,6 +103,27 @@ public class FloatingManage implements IFloatingView, FloatMoveListener {
         return this;
     }
 
+    public boolean isVisibility() {
+        if (mEnFloatingView != null) {
+            return mEnFloatingView.getVisibility()==View.VISIBLE;
+        }
+        return false;
+    }
+    public void visibility(int visibility) {
+        if (mEnFloatingView != null) {
+            mEnFloatingView.setVisibility(visibility);
+        }
+    }
+
+
+
+    public void userToastDialog() {
+        if (viewToast == null) {
+            return;
+        }
+        showToast();
+    }
+
     @Override
     public FloatView getView() {
         return mEnFloatingView;

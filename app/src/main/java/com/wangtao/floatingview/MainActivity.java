@@ -26,14 +26,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(FloatRootView magnetView) {
                 FloatView floatView = (FloatView) magnetView;
                 floatView.check(false);
-                Toast.makeText(MainActivity.this,"点击",Toast.LENGTH_SHORT).show();
+                floatingManage.userToastDialog();
             }
         });
         Button btn = findViewById(R.id.btn);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                floatingManage.visibility();
+                floatingManage.visibility(View.GONE);
             }
         });
     }
