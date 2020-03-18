@@ -16,7 +16,7 @@ public class FloatRootView extends FrameLayout {
 
     private Context mContext;
     //左右边距
-    public static final int MARGIN_EDGE = 16;
+    public static final int MARGIN_EDGE = 6;
     //上下边距
     public static final int MARGIN_EDGE_V = 100;
     //记录down/up位置

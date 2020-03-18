@@ -8,7 +8,6 @@ import androidx.core.content.ContextCompat;
 import android.view.MotionEvent;
 import android.widget.ImageView;
 
-import com.makeramen.roundedimageview.RoundedImageView;
 
 public class FloatView extends FloatRootView {
 
