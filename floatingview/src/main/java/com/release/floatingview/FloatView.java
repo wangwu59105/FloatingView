@@ -29,6 +29,10 @@ public class FloatView extends FloatRootView {
         ivCover.setEnabled(check);
     }
 
+    public boolean isCheck(){
+       return ivCover.isEnabled();
+    }
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
